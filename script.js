@@ -30,8 +30,13 @@ function createGrid(size) {
         const newDiv = document.createElement("div");
         newDiv.className = "square";
         newDiv.addEventListener("mouseover", () => {
-            newDiv.style.backgroundColor = "black";
+            newDiv.style.backgroundColor = randomColor();
         })
         container.appendChild(newDiv);
     }
+}
+
+function randomColor() {
+    const random = Math.floor(Math.random() * 16777215).toString(16);
+    return `#${random.padStart(6, "0")}`;
 }
