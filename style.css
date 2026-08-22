@@ -4,9 +4,11 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    flex-direction: column;
 }
 
 #container {
+    --grid-size: 16;
     display: flex;
     flex-wrap: wrap;
     width: 480px;
@@ -14,8 +16,18 @@ body {
 }
 
 .square {
-    flex: 0 0 calc(100% / 16);
-    height: calc(100% / 16);
+    flex: 0 0 calc(100% / var(--grid-size));
+    height: calc(100% / var(--grid-size));
     box-sizing: border-box;
     border: 1px solid black;
+}
+
+#grid {
+    background-color: grey;
+    color: white;
+    margin: 32px;
+    padding: 16px 32px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
